@@ -11,9 +11,9 @@ import searchView from './views/SearchView.js';
 
 ///////////////////////////////////////
 //this if is for parcel
-if (module.hot) {
-  module.hot.accept();
-}
+// if (module.hot) {
+//   module.hot.accept();
+// }
 
 const controlRecipes = async function () {
   try {
@@ -42,7 +42,7 @@ const controlSearchResults = async function () {
 
     await model.loadSearchResults(query);
 
-    resultsView.render(model.state.search.results);
+    resultsView.render(model.getSearchResultsPage(2));
   } catch (error) {
     console.log(error);
   }
