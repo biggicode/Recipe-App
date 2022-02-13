@@ -8,6 +8,7 @@ import addRecipeView from './views/addRecipeView.js';
 
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
+import { MODAL_CLOSE_SECONDS } from './config.js';
 
 // https://forkify-api.herokuapp.com/v2
 
@@ -92,8 +93,20 @@ const controlBookmarks = function () {
 
 const controlAddRecipe = async function (newRecipe) {
   try {
+    addRecipeView.renderSpinner();
+
     await model.uploadRecipe(newRecipe);
     console.log(model.state.recipe);
+
+    //Render recipe
+    recipeView.render(model.state.recipe);
+
+    addRecipeView.renderMessage();
+
+    //close form window
+    setTimeout(function () {
+      // addRecipeView.toggleWindow();
+    }, MODAL_CLOSE_SECONDS * 1000);
   } catch (error) {
     console.log(error);
     addRecipeView.renderError(error.message);
