@@ -51,8 +51,12 @@ const controlSearchResults = async function () {
   }
 };
 
-const controlPagination = function () {
-  console.log('merge');
+const controlPagination = function (goToPage) {
+  //render new search results
+  resultsView.render(model.getSearchResultsPage(goToPage));
+
+  //Render new pagination buttons
+  paginationView.render(model.state.search);
 };
 
 const init = function () {
