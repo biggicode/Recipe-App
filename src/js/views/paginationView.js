@@ -14,7 +14,14 @@ class PaginationView extends View {
 
     //First page and there are more pages to display
     if (currentPage === 1 && numOfPages > 1) {
-      return 'page1 and others';
+      return `
+        <button class="btn--inline pagination__btn--next">
+          <span>Page ${currentPage + 1}</span>
+          <svg class="search__icon">
+            <use href="${icons}#icon-arrow-right"></use>
+          </svg>
+        </button>
+      `;
     }
 
     //Last page
