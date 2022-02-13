@@ -28,6 +28,8 @@ const controlRecipes = async function () {
     await model.loadRecipe(id);
 
     recipeView.render(model.state.recipe);
+
+    controlServings();
   } catch (error) {
     recipeView.renderError();
   }
@@ -64,6 +66,7 @@ const controlServings = function () {
   model.updateServings(6);
 
   //Update recipe view
+  recipeView.render(model.state.recipe);
 };
 
 const init = function () {
