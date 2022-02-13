@@ -8,7 +8,9 @@ class BookmarksView extends View {
   _message = '';
 
   _generateMarkup() {
-    return this._data.map(bookmark => previewView.redner(bookmark)).join('');
+    return this._data
+      .map(bookmark => previewView.render(bookmark, false))
+      .join('');
   }
 }
 
