@@ -125,7 +125,18 @@ export const uploadRecipe = async function (newRecipe) {
           description,
         };
       });
-    console.log(ingredients);
+
+    const recipe = {
+      title: newRecipe.title,
+      source_url: newRecipe.sourceUrl,
+      image_url: newRecipe.image,
+      publisher: newRecipe.publisher,
+      cooking_time: +newRecipe.cookingTime,
+      sevings: +newRecipe.servings,
+      ingredients,
+    };
+
+    console.log(recipe);
   } catch (error) {
     throw error;
   }
