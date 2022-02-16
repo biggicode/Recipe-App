@@ -4,19 +4,20 @@
   "description": "Recipe application",
   "default": "index.html",
   "scripts": {
-    "start": "parcel index.html",
+    "start": "parcel serve index.html",
     "build": "parcel build index.html --dist-dir ./dist"
   },
   "author": "Oncescu Laurentiu",
   "license": "ISC",
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.3.1",
-    "parcel": "^2.3.1",
-    "sass": "^1.49.7"
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@parcel/transformer-sass": "^2.0.0-nightly.646",
+    "parcel": "^2.0.0-nightly.644",
+    "sass": "^1.32.8"
   },
   "dependencies": {
-    "core-js": "^3.21.0",
-    "fracty": "^1.0.9",
-    "regenerator-runtime": "^0.13.9"
+    "core-js": "^3.10.1",
+    "fractional": "^1.0.0",
+    "regenerator-runtime": "^0.13.7"
   }
 }
